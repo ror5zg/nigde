@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>nikto</title>
 	</head>
 	<body>
-		<slot />
+		<div class="container">
+			<slot />
+		</div>
 	</body>
 </html>
 
@@ -18,5 +20,13 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+
+		font-family: 'Courier New', 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+	}
+
+	.container {
+		display: flex;
+		/* flex-flow: row wrap;
+    	align-content: flex-start; */
 	}
 </style>
