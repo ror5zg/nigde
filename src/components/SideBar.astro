@@ -41,9 +41,12 @@ const menuItems = [
 
 <style>
     .sidebar {
-        background-color: #f6f0f7;
+        background-color: #e3e4e2;
         width: 500px;
-        /* position: fixed; */
+
+        display: flex;
+        justify-content: center;  /* 横方向中央（省略してもOK） */
+        align-items: center;      /* 縦方向中央！ */
     }
 
     .sidebar-container {
@@ -54,6 +57,10 @@ const menuItems = [
 
     .menu-list {
         list-style: none;
+    }
+
+    .menu-item {
+        width: 100%;
     }
 
     .menu-link {
