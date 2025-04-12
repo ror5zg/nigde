@@ -22,11 +22,26 @@ import "the-new-css-reset";
 	html,
 	body {
 		margin: 0;
-		font-family: Consolas, 'Courier New', 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
+		font-family: 'Times New Roman', Consolas, 'Courier New', 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
 	}
 
 	.container {
 		display: flex;
 		min-height: 100vh;
 	}
+
+	@media (min-width: 767px) {
+		.sidebar {
+			width: 25%;
+		}
+		.contents {
+			width: 75%;
+		}
+	}
+	/* @media (max-width: 767px) {
+		.sidebar,
+		.contents {
+			width: 100%;
+		}
+	} */
 </style>

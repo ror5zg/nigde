@@ -6,15 +6,18 @@ import Logo from '../assets/nikto_nosub.svg';
 const menuItems = [
     {
         id: "about",
-        nameEn: "about"
+        nameEn: "about",
+        link: "about"
     },
     {
         id: "works",
-        nameEn: "works"
+        nameEn: "works",
+        link: "#"
     },
     {
-        id: "x",
-        nameEn: "x"
+        id: "contact",
+        nameEn: "contact",
+        link: "#"
     },
 ];
 ---
@@ -22,7 +25,9 @@ const menuItems = [
 <div class="sidebar">
     <div class="sidebar-container">
         <div class="logo">
-            <Logo width={200} />
+            <a href="/">
+                <Logo width={200} />
+            </a>
         </div>
         
         <div class="menu">
@@ -30,7 +35,7 @@ const menuItems = [
                 {
                     menuItems.map((item) => (
                         <li class="menu-item">
-                            <a href="#" class="menu-link">{item.nameEn}</a>
+                            <a href={item.link} class="menu-link">{item.nameEn}</a>
                         </li>
                     ))
                 }
@@ -42,21 +47,28 @@ const menuItems = [
 <style>
     .sidebar {
         background-color: #e3e4e2;
-        width: 500px;
+        width: 30%;
+        /* width: 500px; */
 
         display: flex;
-        justify-content: center;  /* 横方向中央（省略してもOK） */
-        align-items: center;      /* 縦方向中央！ */
+        justify-content: center;
+        align-items: center;
+
+        border-right: 1px solid #909090;
     }
 
     .sidebar-container {
-        /* margin: 0 auto; */
-        /* padding: 2em 3em 0;
-        margin-left: 25%; */
+        display: flex;
+        flex-direction: column; /* ← これが縦並びにする指定！ */
+        align-items: left;     /* 横方向を中央に揃える */
+        gap: 20px;               /* ロゴとメニューの間の余白 */
     }
 
     .menu-list {
         list-style: none;
+        font-style: italic;
+        font-size: 1.4em;
+        letter-spacing: 0.05em;
     }
 
     .menu-item {
@@ -77,4 +89,10 @@ const menuItems = [
     a:hover {
         text-decoration: underline;
     }
+
+    /* @media (max-width: 767px) {
+		.sidebar {
+			width: 100%;
+		}
+	} */
 </style>

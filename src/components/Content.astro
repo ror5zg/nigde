@@ -2,7 +2,10 @@
 import { CldImage } from 'astro-cloudinary';
 ---
 
-<div class="main-content">
+<div class="contents">
+    <div class="row content-subhead">
+        about
+    </div>
     <!-- <CldImage
         src="https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300757/29_qg3kup.png"
         alt="<Description>"
@@ -10,8 +13,11 @@ import { CldImage } from 'astro-cloudinary';
 </div>
 
 <style>
-    .main-content {
+    .contents {
         flex: 1;
+        width: 70%;
+        /* background-color: #e3e4e2; */
         background-color: #ffffff;
     }
+
 </style>
