@@ -1,0 +1,59 @@
+---
+const menuItems = [
+    {
+        id: "about",
+        nameEn: "about",
+        link: "about"
+    },
+    {
+        id: "works",
+        nameEn: "works",
+        link: "gallery"
+    },
+    {
+        id: "contact",
+        nameEn: "contact",
+        link: "#"
+    },
+];
+---
+
+<div class="menu">
+    <ul class="menu-list">
+        {
+            menuItems.map((item) => (
+                <li class="menu-item">
+                    <a href={item.link} class="menu-link">{item.nameEn}</a>
+                </li>
+            ))
+        }
+    </ul>
+</div>
+
+<style>
+    .menu-list {
+        list-style: none;
+        font-style: italic;
+        font-size: 1.4em;
+        letter-spacing: 0.05em;
+    }
+
+    .menu-item {
+        width: 100%;
+    }
+
+    .menu-link {
+        display: block;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    a:link,a:active,a:visited {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
