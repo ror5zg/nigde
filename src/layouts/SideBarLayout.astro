@@ -4,8 +4,8 @@ import MenuList from '../components/MenuList.astro';
 import LogoLink from '../components/LogoLink.astro';
 ---
 
-<div class="sidebar w-1/3">
-    <div class="sidebar-container">
+<div class="sidebar w-1/3 flex flex-col justify-center">
+    <div class="sidebar-container w-3xs mx-auto">
         <LogoLink />
         <MenuList />
     </div>
@@ -21,10 +21,9 @@ import LogoLink from '../components/LogoLink.astro';
         border-right: 1px solid #1d1d1d;
     }
 
-    .sidebar-container {
-        display: flex;
-        flex-direction: column;
+    /* .sidebar-container {
         align-items: left;
         gap: 20px;
-    }
+        width: 300px;
+    } */
 </style>
