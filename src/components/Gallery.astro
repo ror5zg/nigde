@@ -1,0 +1,25 @@
+---
+import Post from '../components/Post.astro';
+
+// https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300757/29_qg3kup.png
+const tempUrl1 = "https://res.cloudinary.com/djcstdyuv/image/upload/v1744300745/28_gaakh6.png";
+const tempUrl2 = "https://res.cloudinary.com/djcstdyuv/image/upload/v1744300749/27_maisqf.png";
+const tempUrl3 = "https://res.cloudinary.com/djcstdyuv/image/upload/v1744300757/29_qg3kup.png";
+const tempDesc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis modi laudantium do";
+
+---
+<div class="gallery">
+    <Post imgUrl={tempUrl1} descripton={tempDesc} />
+    <Post imgUrl={tempUrl2} descripton={tempDesc} />
+    <Post imgUrl={tempUrl3} descripton={tempDesc} />
+</div>
+
+<style>
+    .gallery {
+        margin: 0px auto;
+        width: 1090px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+</style>

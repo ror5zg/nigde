@@ -1,0 +1,84 @@
+---
+import { CldImage } from 'astro-cloudinary';
+
+interface Props {
+    imgUrl: string,
+    descripton: string
+}
+
+const { imgUrl, descripton } = Astro.props;
+
+const tempTags = ["works", "style1"];
+---
+
+<div class="post">
+    <div class="post-attr post-controls">
+        <div class="post-title">
+            <p>пост</p>
+        </div>
+    </div>
+    <div class="post-content">
+        <!-- todo: 処理を共通化し、画像、動画の場合に対応する -->
+        <CldImage
+            src={imgUrl}
+            width={350}
+            alt="<Description>"
+        />
+    </div>
+    <!-- todo: 引数でdescが与えられた場合のみ描画 ifで分岐 -->
+    <div class="post-attr post-description">
+        {descripton}
+    </div>
+    <div class="post-attr post-tags">
+        <ul class="tags-container">
+            {
+                tempTags.map((tag) => (
+                    <li class="tag">
+                        <a href="#" class="tag-link">{"#" + tag}</a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>
+
+<style>
+    .post {
+        width: 350px;
+        padding: 0;
+        margin: 5px;
+        border: 1px solid #1d1d1d;
+
+        list-style: none;
+        font-style: italic;
+        /* font-weight: bold; */
+        /* font-size: 1.1em; */
+        letter-spacing: 0.1em;
+    }
+
+    .post-attr {
+        padding: 0.3em;
+    }
+
+    .post-controls {
+        border-bottom: 1px solid #1d1d1d;
+    }
+
+    .astro-cloudinary-cldimage {
+        vertical-align: bottom;
+    }
+
+    .post-description,
+    .post-tags {
+        border-top: 1px solid #1d1d1d;
+    }
+
+    .tags-container {
+        display: flex;
+    }
+
+    .tag {
+        margin-right: 5px;
+    }
+
+</style>
