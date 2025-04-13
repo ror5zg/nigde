@@ -1,16 +1,9 @@
 ---
 import Post from '../components/Post.astro';
 
-// https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300757/29_qg3kup.png
-const tempUrl1 = "https://res.cloudinary.com/djcstdyuv/image/upload/v1744300745/28_gaakh6.png";
-const tempUrl2 = "https://res.cloudinary.com/djcstdyuv/image/upload/v1744300749/27_maisqf.png";
-// const tempUrl3 = "https://res.cloudinary.com/djcstdyuv/image/upload/v1744300757/29_qg3kup.png";
-const tempUrl3 = "https://youtu.be/YUzeRKgDMXk?si=v6CRjrJPdWDEDnza";
 const tempDesc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis modi laudantium do";
-
-// https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300726/26_py9pf9.png
 const posts = [
-    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300745/28_gaakh6.png", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_700,g_face/v1744300745/28_gaakh6.png", srcType: "cloudinary", description: ""},
     {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300749/27_maisqf.png", srcType: "cloudinary", description: ""},
     {srcUrl: "https://youtu.be/YUzeRKgDMXk?si=v6CRjrJPdWDEDnza", srcType: "youtube", description: tempDesc},
     {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300761/24_azuaog.png", srcType: "cloudinary", description: ""},
@@ -20,16 +13,10 @@ const posts = [
 ]
 ---
 
-<div class="gallery max-w-5xl mx-auto columns-1 2xl:columns-3">
-    <!-- <Post srcUrl={tempUrl1} descripton={tempDesc} srcType="cloudinary" />
-    <Post srcUrl={tempUrl2} descripton={tempDesc} srcType="cloudinary" />
-    <Post srcUrl={tempUrl3} descripton={tempDesc} srcType="youtube" /> -->
-
+<div class="gallery size-fit mx-auto columns-1 gap-x-1 lg:columns-2 2xl:columns-3">
     {
         posts.map((post) => (
             <Post srcUrl={post.srcUrl} descripton={post.description} srcType={post.srcType} />
         ))
     }
-
-    <!-- <Post srcUrl={tempUrl1} descripton={tempDesc} srcType="cloudinary" /> -->
 </div>
