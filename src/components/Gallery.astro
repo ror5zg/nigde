@@ -3,7 +3,8 @@ import Post from '../components/Post.astro';
 
 const tempDesc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis modi laudantium do";
 const posts = [
-    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_700,g_face/v1744300745/28_gaakh6.png", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744501076/IMG_0566_prkukx.jpg", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300745/28_gaakh6.png", srcType: "cloudinary", description: ""},
     {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300749/27_maisqf.png", srcType: "cloudinary", description: ""},
     {srcUrl: "https://youtu.be/YUzeRKgDMXk?si=v6CRjrJPdWDEDnza", srcType: "youtube", description: tempDesc},
     {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300761/24_azuaog.png", srcType: "cloudinary", description: ""},
@@ -13,7 +14,7 @@ const posts = [
 ]
 ---
 
-<div class="gallery size-fit mx-auto columns-1 gap-x-1 lg:columns-2 2xl:columns-3">
+<div class="gallery size-fit mx-auto p-8 gap-x-4 columns-1 lg:columns-2 2xl:columns-3">
     {
         posts.map((post) => (
             <Post srcUrl={post.srcUrl} descripton={post.description} srcType={post.srcType} />
