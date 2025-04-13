@@ -1,12 +1,14 @@
 ---
 import { CldImage } from 'astro-cloudinary';
+import { YouTube } from 'astro-embed';
 
 interface Props {
-    imgUrl: string,
-    descripton: string
+    srcUrl: string,
+    descripton: string,
+    srcType: string
 }
 
-const { imgUrl, descripton } = Astro.props;
+const { srcUrl, descripton, srcType } = Astro.props;
 
 const tempTags = ["works", "style1"];
 ---
@@ -19,11 +21,17 @@ const tempTags = ["works", "style1"];
     </div>
     <div class="post-content">
         <!-- todo: 処理を共通化し、画像、動画の場合に対応する -->
-        <CldImage
-            src={imgUrl}
-            width={350}
-            alt="<Description>"
-        />
+        {
+            () => {
+                if (srcType === "cloudinary") {
+                    return <CldImage src={srcUrl} width={350} alt="<Description>" />
+                } else if (srcType === "youtube") {
+                    return <YouTube id={srcUrl} />
+                } else {
+                    return <p>none</p>
+                }
+            }
+        }
     </div>
     <!-- todo: 引数でdescが与えられた場合のみ描画 ifで分岐 -->
     <div class="post-attr post-description">
@@ -64,13 +72,21 @@ const tempTags = ["works", "style1"];
         border-bottom: 1px solid #1d1d1d;
     }
 
+    .post-content {
+        border-bottom: 1px solid #1d1d1d;
+    }
+
     .astro-cloudinary-cldimage {
         vertical-align: bottom;
     }
 
-    .post-description,
-    .post-tags {
-        border-top: 1px solid #1d1d1d;
+    /* 100%だとブラウザ上で100%表示の際に下線が消えてしまう */
+    .post-content lite-youtube::after {
+        padding-bottom: calc(95% /(16 / 9));
+    }
+
+    .post-description {
+        border-bottom: 1px solid #1d1d1d;
     }
 
     .tags-container {
