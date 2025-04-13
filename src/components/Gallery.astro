@@ -8,19 +8,28 @@ const tempUrl2 = "https://res.cloudinary.com/djcstdyuv/image/upload/v1744300749/
 const tempUrl3 = "https://youtu.be/YUzeRKgDMXk?si=v6CRjrJPdWDEDnza";
 const tempDesc = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis modi laudantium do";
 
+// https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300726/26_py9pf9.png
+const posts = [
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300745/28_gaakh6.png", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300749/27_maisqf.png", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://youtu.be/YUzeRKgDMXk?si=v6CRjrJPdWDEDnza", srcType: "youtube", description: tempDesc},
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300761/24_azuaog.png", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300749/32_urilos.png", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://res.cloudinary.com/djcstdyuv/image/upload/c_thumb,w_200,g_face/v1744300726/26_py9pf9.png", srcType: "cloudinary", description: ""},
+    {srcUrl: "https://youtu.be/TWxwsYGG0Gg?si=j-MBjkQAGn7AKELQ", srcType: "youtube", description: tempDesc},
+]
 ---
-<div class="gallery">
-    <Post srcUrl={tempUrl1} descripton={tempDesc} srcType="cloudinary" />
+
+<div class="gallery max-w-5xl mx-auto columns-1 2xl:columns-3">
+    <!-- <Post srcUrl={tempUrl1} descripton={tempDesc} srcType="cloudinary" />
     <Post srcUrl={tempUrl2} descripton={tempDesc} srcType="cloudinary" />
-    <Post srcUrl={tempUrl3} descripton={tempDesc} srcType="youtube" />
-</div>
+    <Post srcUrl={tempUrl3} descripton={tempDesc} srcType="youtube" /> -->
 
-<style>
-    .gallery {
-        margin: 0px auto;
-        width: 1090px;
-
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+    {
+        posts.map((post) => (
+            <Post srcUrl={post.srcUrl} descripton={post.description} srcType={post.srcType} />
+        ))
     }
-</style>
+
+    <!-- <Post srcUrl={tempUrl1} descripton={tempDesc} srcType="cloudinary" /> -->
+</div>

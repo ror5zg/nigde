@@ -7,13 +7,14 @@ import './src/styles/global.css';
 <html lang="ja">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<!-- <meta name="viewport" content="width=device-width" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>никто</title>
 	</head>
 	<body>
-		<div class="container flex">
+		<div class="main-container flex w-full">
 			<slot />
 		</div>
 	</body>
@@ -23,23 +24,8 @@ import './src/styles/global.css';
 	html,
 	body {
 		background-color: #e3e4e2;
-
 		margin: 0;
 		font-family: 'Times New Roman', Consolas, 'Courier New', 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
 		font-size: 1.0em;
-	}
-
-	.container {
-		/* display: flex; */
-		min-height: 100vh;
-	}
-
-	@media (min-width: 767px) {
-		.sidebar {
-			width: 25%;
-		}
-		.contents {
-			width: 75%;
-		}
 	}
 </style>

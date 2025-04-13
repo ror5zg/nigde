@@ -13,14 +13,14 @@ const { srcUrl, descripton, srcType } = Astro.props;
 const tempTags = ["works", "style1"];
 ---
 
-<div class="post">
+<div class="post w-80 m-1 break-inside-avoid-column">
     <div class="post-attr post-controls">
         <div class="post-title">
             <p>пост</p>
         </div>
     </div>
+    
     <div class="post-content">
-        <!-- todo: 処理を共通化し、画像、動画の場合に対応する -->
         {
             () => {
                 if (srcType === "cloudinary") {
@@ -33,10 +33,17 @@ const tempTags = ["works", "style1"];
             }
         }
     </div>
-    <!-- todo: 引数でdescが与えられた場合のみ描画 ifで分岐 -->
-    <div class="post-attr post-description">
-        {descripton}
-    </div>
+
+    {
+        () => {
+          if (descripton === ""){
+            return <div class="post-attr post-description hidden"></div>
+          } else {
+            return <div class="post-attr post-description">{descripton}</div>
+          }
+        }
+    }
+
     <div class="post-attr post-tags">
         <ul class="tags-container">
             {
@@ -52,15 +59,13 @@ const tempTags = ["works", "style1"];
 
 <style>
     .post {
-        width: 350px;
+        /* width: 350px;
         padding: 0;
-        margin: 5px;
+        margin: 5px; */
         border: 1px solid #1d1d1d;
 
         list-style: none;
         font-style: italic;
-        /* font-weight: bold; */
-        /* font-size: 1.1em; */
         letter-spacing: 0.1em;
     }
 
