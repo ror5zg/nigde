@@ -2,13 +2,16 @@
 import { late } from 'astro:schema';
 import MenuList from '../components/MenuList.astro';
 import LogoLink from '../components/LogoLink.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <div class="sidebar h-screen sticky top-0 flex flex-col lg:w-1/4">
-    <!-- <div class="sidebar-container size-fit pt-8 mx-auto"> -->
-    <div class="sidebar-container size-fit pt-8 mx-auto">
+    <div class="sidebar-container w-[200px] pt-8 mx-auto">
         <LogoLink />
         <MenuList />
+    </div>
+    <div class="footer-container w-[200px] content-end grow pb-8 mx-auto">
+        <Footer />
     </div>
 </div>
 
