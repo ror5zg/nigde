@@ -1,5 +1,5 @@
 ---
-import "the-new-css-reset";
+// import "the-new-css-reset";
 import './src/styles/global.css';
 ---
 
@@ -13,7 +13,7 @@ import './src/styles/global.css';
 		<title>никто</title>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container flex">
 			<slot />
 		</div>
 	</body>
@@ -22,13 +22,15 @@ import './src/styles/global.css';
 <style>
 	html,
 	body {
+		background-color: #e3e4e2;
+
 		margin: 0;
 		font-family: 'Times New Roman', Consolas, 'Courier New', 'メイリオ', 'Meiryo', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
 		font-size: 1.0em;
 	}
 
 	.container {
-		display: flex;
+		/* display: flex; */
 		min-height: 100vh;
 	}
 
